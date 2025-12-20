@@ -10,6 +10,7 @@ import {
   FaCity,
   FaCreditCard,
 } from "react-icons/fa";
+import Link from "next/link";
 
 export default function CheckoutForm() {
   const [formData, setFormData] = useState<CheckoutFormData>({
@@ -122,15 +123,17 @@ export default function CheckoutForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Shipping Method */}
         <div>
-          <h3 className="text-lg font-bold mb-4">Shipping Method</h3>
+          <h3 className="text-lg font-bold mb-4 text-primary-dark">
+            Shipping Method
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {shippingMethods.map((method) => (
               <label
                 key={method.id}
                 className={`relative cursor-pointer border-2 rounded-lg p-4 transition-all ${
                   shippingMethod === method.id
-                    ? "border-red-600 bg-red-50"
-                    : "border-gray-300 hover:border-red-300"
+                    ? "border-primary bg-primary-100"
+                    : "border-gray-300 hover:border-primary-300"
                 }`}
               >
                 <input
@@ -152,7 +155,7 @@ export default function CheckoutForm() {
         </div>
 
         {/* Personal Information */}
-        <div>
+        <div className="text-ptext">
           <h3 className="text-lg font-bold mb-4">Personal Information</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -165,13 +168,13 @@ export default function CheckoutForm() {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent ${
-                  errors.firstName ? "border-red-500" : "border-gray-300"
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-1000  focus:border-transparent outline-none ${
+                  errors.firstName ? "border-primary-1000" : "border-gray-300"
                 }`}
                 placeholder="John"
               />
               {errors.firstName && (
-                <p className="mt-1 text-red-600 text-sm">{errors.firstName}</p>
+                <p className="mt-1 text-primary text-sm">{errors.firstName}</p>
               )}
             </div>
 
@@ -185,13 +188,13 @@ export default function CheckoutForm() {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent ${
-                  errors.lastName ? "border-red-500" : "border-gray-300"
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent outline-none ${
+                  errors.lastName ? "border-primary-1000" : "border-gray-300"
                 }`}
                 placeholder="Doe"
               />
               {errors.lastName && (
-                <p className="mt-1 text-red-600 text-sm">{errors.lastName}</p>
+                <p className="mt-1 text-primary text-sm">{errors.lastName}</p>
               )}
             </div>
           </div>
@@ -209,13 +212,13 @@ export default function CheckoutForm() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent ${
-                errors.email ? "border-red-500" : "border-gray-300"
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent outline-none text-ptext ${
+                errors.email ? "border-primary-1000" : "border-gray-300"
               }`}
               placeholder="john@example.com"
             />
             {errors.email && (
-              <p className="mt-1 text-red-600 text-sm">{errors.email}</p>
+              <p className="mt-1 text-primary text-sm">{errors.email}</p>
             )}
           </div>
 
@@ -229,19 +232,19 @@ export default function CheckoutForm() {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent ${
-                errors.phone ? "border-red-500" : "border-gray-300"
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent outline-none text-ptext ${
+                errors.phone ? "border-primary-1000" : "border-gray-300"
               }`}
               placeholder="(555) 123-4567"
             />
             {errors.phone && (
-              <p className="mt-1 text-red-600 text-sm">{errors.phone}</p>
+              <p className="mt-1 text-primary text-sm">{errors.phone}</p>
             )}
           </div>
         </div>
 
         {/* Address */}
-        <div>
+        <div className="text-ptext">
           <h3 className="text-lg font-bold mb-4">Shipping Address</h3>
           <div className="space-y-4">
             <div>
@@ -254,13 +257,13 @@ export default function CheckoutForm() {
                 name="address"
                 value={formData.address}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent ${
-                  errors.address ? "border-red-500" : "border-gray-300"
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent text-ptext outline-none ${
+                  errors.address ? "border-primary-1000" : "border-gray-300"
                 }`}
                 placeholder="123 Main St"
               />
               {errors.address && (
-                <p className="mt-1 text-red-600 text-sm">{errors.address}</p>
+                <p className="mt-1 text-primary text-sm">{errors.address}</p>
               )}
             </div>
 
@@ -275,13 +278,13 @@ export default function CheckoutForm() {
                   name="city"
                   value={formData.city}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent ${
-                    errors.city ? "border-red-500" : "border-gray-300"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent outline-none ${
+                    errors.city ? "border-primary-1000" : "border-gray-300"
                   }`}
                   placeholder="New York"
                 />
                 {errors.city && (
-                  <p className="mt-1 text-red-600 text-sm">{errors.city}</p>
+                  <p className="mt-1 text-primary text-sm">{errors.city}</p>
                 )}
               </div>
 
@@ -294,13 +297,13 @@ export default function CheckoutForm() {
                   name="zipCode"
                   value={formData.zipCode}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent ${
-                    errors.zipCode ? "border-red-500" : "border-gray-300"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent outline-none ${
+                    errors.zipCode ? "border-primary-1000" : "border-gray-300"
                   }`}
                   placeholder="10001"
                 />
                 {errors.zipCode && (
-                  <p className="mt-1 text-red-600 text-sm">{errors.zipCode}</p>
+                  <p className="mt-1 text-primary text-sm">{errors.zipCode}</p>
                 )}
               </div>
             </div>
@@ -317,22 +320,22 @@ export default function CheckoutForm() {
             value={formData.notes}
             onChange={handleInputChange}
             rows={3}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent text-ptext outline-none"
             placeholder="Special instructions, delivery notes, etc."
           />
         </div>
 
         {/* Payment Method */}
         <div>
-          <h3 className="text-lg font-bold mb-4">Payment Method</h3>
+          <h3 className="text-lg font-bold mb-4 text-ptext">Payment Method</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {paymentMethods.map((method) => (
               <label
                 key={method.id}
-                className={`relative cursor-pointer border-2 rounded-lg p-4 transition-all ${
+                className={`relative cursor-pointer border-2 rounded-lg p-4 transition-all text-ptext ${
                   paymentMethod === method.id
-                    ? "border-red-600 bg-red-50"
-                    : "border-gray-300 hover:border-red-300"
+                    ? "border-primary bg-primary-100"
+                    : "border-gray-300 hover:border-primary-300"
                 }`}
               >
                 <input
@@ -398,18 +401,18 @@ export default function CheckoutForm() {
           <input
             type="checkbox"
             id="terms"
-            className="h-4 w-4 text-red-600 rounded focus:ring-red-500 mt-1"
+            className="h-4 w-4 text-primary rounded focus:ring-red-500 mt-1"
             required
           />
           <label htmlFor="terms" className="ml-2 text-gray-700 text-sm">
             I agree to the{" "}
-            <a href="/terms" className="text-red-600 hover:underline">
+            <Link href="/terms" className="text-primary hover:underline">
               Terms and Conditions
-            </a>{" "}
+            </Link>{" "}
             and{" "}
-            <a href="/privacy" className="text-red-600 hover:underline">
+            <Link href="/privacy" className="text-primary hover:underline">
               Privacy Policy
-            </a>
+            </Link>
             . *
           </label>
         </div>
@@ -418,7 +421,7 @@ export default function CheckoutForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full bg-red-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors ${
+          className={`w-full bg-primary text-white py-4 rounded-lg font-bold text-lg hover:bg-primary-dark transition-colors ${
             isSubmitting ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >

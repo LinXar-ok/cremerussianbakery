@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { FaFilter, FaSort } from "react-icons/fa";
 import { useFilters } from "./ProductFilterContext";
+import Link from "next/link";
 
 interface Product {
   id: string;
@@ -23,7 +24,7 @@ const products: Product[] = [
     description: "Rich chocolate cake with fudge frosting",
     price: 15.99,
     category: "Cakes",
-    image: "/cake1.jpg",
+    image: "/cake_01.jpg",
     rating: 4.8,
     isBestSeller: true,
   },
@@ -33,7 +34,7 @@ const products: Product[] = [
     description: "Classic red velvet with cream cheese frosting",
     price: 16.99,
     category: "Cakes",
-    image: "/cake2.jpg",
+    image: "/cake_04.jpg",
     rating: 4.9,
     isNew: true,
   },
@@ -43,7 +44,7 @@ const products: Product[] = [
     description: "Light vanilla sponge with buttercream frosting",
     price: 14.99,
     category: "Cakes",
-    image: "/cake3.jpg",
+    image: "/cake_03.jpg",
     rating: 4.7,
   },
   {
@@ -52,7 +53,7 @@ const products: Product[] = [
     description: "Moist carrot cake with walnuts and cream cheese frosting",
     price: 17.99,
     category: "Cakes",
-    image: "/cake4.jpg",
+    image: "/cake_02.jpg",
     rating: 4.9,
     isBestSeller: true,
   },
@@ -62,7 +63,7 @@ const products: Product[] = [
     description: "Buttery French croissant",
     price: 3.99,
     category: "Pastries",
-    image: "/pastry1.jpg",
+    image: "/cake_05.jpg",
     rating: 4.6,
   },
   {
@@ -71,7 +72,7 @@ const products: Product[] = [
     description: "Cream-filled pastry with chocolate glaze",
     price: 4.99,
     category: "Pastries",
-    image: "/pastry2.jpg",
+    image: "/cake_06.jpg",
     rating: 4.8,
   },
   {
@@ -80,7 +81,7 @@ const products: Product[] = [
     description: "Flaky pastry filled with spiced apples",
     price: 4.49,
     category: "Pastries",
-    image: "/pastry3.jpg",
+    image: "/cake_07.jpg",
     rating: 4.7,
   },
   {
@@ -89,7 +90,7 @@ const products: Product[] = [
     description: "Assorted French macarons",
     price: 12.99,
     category: "Pastries",
-    image: "/pastry4.jpg",
+    image: "/cake_08.jpg",
     rating: 4.9,
     isNew: true,
   },
@@ -99,7 +100,7 @@ const products: Product[] = [
     description: "Artisan sourdough loaf",
     price: 8.99,
     category: "Breads",
-    image: "/bread1.jpg",
+    image: "/cake_09.jpg",
     rating: 4.8,
   },
   {
@@ -108,7 +109,7 @@ const products: Product[] = [
     description: "Traditional French baguette",
     price: 5.99,
     category: "Breads",
-    image: "/bread2.jpg",
+    image: "/cake_10.jpg",
     rating: 4.7,
   },
   {
@@ -117,7 +118,7 @@ const products: Product[] = [
     description: "Chewy chocolate chip cookies",
     price: 6.99,
     category: "Cookies",
-    image: "/cookie1.jpg",
+    image: "/cake11.jpg",
     rating: 4.8,
   },
   {
@@ -126,7 +127,7 @@ const products: Product[] = [
     description: "Decorated sugar cookies",
     price: 9.99,
     category: "Cookies",
-    image: "/cookie2.jpg",
+    image: "/cake_12.jpg",
     rating: 4.6,
   },
 ];
@@ -352,12 +353,12 @@ export default function ProductGrid() {
                   <span className="inline-block bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
                     {product.category} ({categoryCounts[product.category] || 0})
                   </span>
-                  <a
+                  <Link
                     href={`/products/${product.id}`}
-                    className="bg-secondary hover:bg-primary text-white px-6 py-2 rounded-full font-semibold transition-colors duration-300 text-sm"
+                    className="bg-secondary hover:bg-primary text-white px-3 py-2 rounded-full font-semibold transition-colors duration-300 text-xs"
                   >
                     View Details
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

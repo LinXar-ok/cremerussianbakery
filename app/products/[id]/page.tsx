@@ -1,3 +1,4 @@
+import { MagicalBackground } from "@/components/layout/MagicalBackground";
 import ProductDetail from "@/components/products/ProductDetail";
 import { Metadata } from "next";
 
@@ -21,8 +22,16 @@ export async function generateMetadata({
 
 export default function ProductPage({ params }: ProductPageProps) {
   return (
-    <div className="pt-24 pb-20">
-      <ProductDetail productId={params.id} />
-    </div>
+    <>
+      <MagicalBackground
+        theme="celebration"
+        intensity="light"
+        className="min-h-screen"
+      >
+        <div className="pt-24 pb-20">
+          <ProductDetail productId={params.id} />
+        </div>
+      </MagicalBackground>
+    </>
   );
 }

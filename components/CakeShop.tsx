@@ -17,11 +17,11 @@ const items: Product[] = [
         data: [
           {
             attributes: {
-              url: "/pexels-AllOcca.jpg",
+              url: "/cake_04.jpg",
               formats: {
-                thumbnail: { url: "/pexels-AllOcca.jpg" },
-                small: { url: "/pexels-AllOcca.jpg" },
-                medium: { url: "/pexels-AllOcca.jpg" },
+                thumbnail: { url: "/cake_01.jpg" },
+                small: { url: "/cake_01.jpg" },
+                medium: { url: "/cake_01.jpg" },
               },
             },
           },
@@ -40,11 +40,11 @@ const items: Product[] = [
         data: [
           {
             attributes: {
-              url: "/pexels-AllOcca.jpg",
+              url: "/cake_02.jpg",
               formats: {
-                thumbnail: { url: "/pexels-AllOcca.jpg" },
-                small: { url: "/pexels-AllOcca.jpg" },
-                medium: { url: "/pexels-AllOcca.jpg" },
+                thumbnail: { url: "/cake_02.jpg" },
+                small: { url: "/cake_02.jpg" },
+                medium: { url: "/cake_02.jpg" },
               },
             },
           },
@@ -63,11 +63,11 @@ const items: Product[] = [
         data: [
           {
             attributes: {
-              url: "/pexels-AllOcca.jpg",
+              url: "/cake_03.jpg",
               formats: {
-                thumbnail: { url: "/pexels-AllOcca.jpg" },
-                small: { url: "/pexels-AllOcca.jpg" },
-                medium: { url: "/pexels-AllOcca.jpg" },
+                thumbnail: { url: "/cake_03.jpg" },
+                small: { url: "/cake_03.jpg" },
+                medium: { url: "/cake_03.jpg" },
               },
             },
           },
@@ -86,11 +86,11 @@ const items: Product[] = [
         data: [
           {
             attributes: {
-              url: "/pexels-AllOcca.jpg",
+              url: "/cake_05.jpg",
               formats: {
-                thumbnail: { url: "/pexels-AllOcca.jpg" },
-                small: { url: "/pexels-AllOcca.jpg" },
-                medium: { url: "/pexels-AllOcca.jpg" },
+                thumbnail: { url: "/cake_04.jpg" },
+                small: { url: "/cake_04.jpg" },
+                medium: { url: "/cake_04.jpg" },
               },
             },
           },

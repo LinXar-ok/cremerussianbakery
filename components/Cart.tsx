@@ -67,14 +67,16 @@ const Cart: React.FC = () => {
                     <div className="flex items-center space-x-2">
                       <button
                         onClick={() => dispatch(decreaseCount({ id: item.id }))}
-                        className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded hover:bg-gray-300 transition-colors"
+                        className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded hover:bg-gray-300 transition-colors text-ptext"
                       >
                         -
                       </button>
-                      <span className="w-8 text-center">{item.count}</span>
+                      <span className="w-8 text-center text-secondary">
+                        {item.count}
+                      </span>
                       <button
                         onClick={() => dispatch(increaseCount({ id: item.id }))}
-                        className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded hover:bg-gray-300 transition-colors"
+                        className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded hover:bg-gray-300 transition-colors text-ptext"
                       >
                         +
                       </button>
@@ -92,8 +94,8 @@ const Cart: React.FC = () => {
 
             <div className="border-t pt-6">
               <div className="flex justify-between items-center mb-6">
-                <span className="text-lg font-semibold">Total:</span>
-                <span className="text-2xl font-bold text-red-600">
+                <span className="text-lg font-semibold text-ptext">Total:</span>
+                <span className="text-2xl font-bold text-primary">
                   ${total.toFixed(2)}
                 </span>
               </div>
@@ -102,7 +104,7 @@ const Cart: React.FC = () => {
                 <Link
                   href="/cart"
                   onClick={closeModal}
-                  className="block w-full bg-red-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
+                  className="block w-full bg-primary text-white text-center py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
                 >
                   View Cart
                 </Link>

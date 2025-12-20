@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
+import Link from "next/link";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -153,12 +154,12 @@ const Contact = () => {
                       {item.title}
                     </h3>
                     {item.link ? (
-                      <a
+                      <Link
                         href={item.link}
                         className="text-gray-600 hover:text-primary-dark transition-colors"
                       >
                         {item.detail}
-                      </a>
+                      </Link>
                     ) : (
                       <p className="text-gray-600">{item.detail}</p>
                     )}

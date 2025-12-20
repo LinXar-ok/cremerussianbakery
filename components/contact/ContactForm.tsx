@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaUser, FaEnvelope, FaPhone, FaClipboard } from "react-icons/fa";
 
@@ -342,9 +343,9 @@ export default function ContactForm() {
 
         <p className="text-center text-gray-500 text-sm">
           By submitting this form, you agree to our{" "}
-          <a href="/privacy" className="text-red-600 hover:underline">
+          <Link href="/privacy" className="text-red-600 hover:underline">
             Privacy Policy
-          </a>
+          </Link>
           .
         </p>
       </form>

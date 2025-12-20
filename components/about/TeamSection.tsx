@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 interface TeamMember {
   id: number;
@@ -136,40 +137,40 @@ export default function TeamSection() {
                 {/* Social Links */}
                 <div className="flex space-x-4">
                   {member.social.facebook && (
-                    <a
+                    <Link
                       href={member.social.facebook}
                       className="text-gray-400 hover:text-primary transition-colors"
                       aria-label="Facebook"
                     >
                       <FaFacebook className="h-5 w-5" />
-                    </a>
+                    </Link>
                   )}
                   {member.social.twitter && (
-                    <a
+                    <Link
                       href={member.social.twitter}
                       className="text-gray-400 hover:text-primary transition-colors"
                       aria-label="Twitter"
                     >
                       <FaTwitter className="h-5 w-5" />
-                    </a>
+                    </Link>
                   )}
                   {member.social.instagram && (
-                    <a
+                    <Link
                       href={member.social.instagram}
                       className="text-gray-400 hover:text-primary transition-colors"
                       aria-label="Instagram"
                     >
                       <FaInstagram className="h-5 w-5" />
-                    </a>
+                    </Link>
                   )}
                   {member.social.linkedin && (
-                    <a
+                    <Link
                       href={member.social.linkedin}
                       className="text-gray-400 hover:text-primary transition-colors"
                       aria-label="LinkedIn"
                     >
                       <FaLinkedin className="h-5 w-5" />
-                    </a>
+                    </Link>
                   )}
                 </div>
               </div>
@@ -195,12 +196,12 @@ export default function TeamSection() {
                 artists who share our love for creating delicious treats.
               </p>
             </div>
-            <a
+            <Link
               href="/careers"
               className="inline-block bg-primary hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 whitespace-nowrap"
             >
               View Open Positions
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

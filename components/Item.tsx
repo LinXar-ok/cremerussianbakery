@@ -6,6 +6,7 @@ import { addToCart } from "@/state/cartSlice";
 import Link from "next/link";
 import { AppDispatch } from "@/state/store";
 import { CakeItem } from "@/types";
+import Image from "next/image";
 
 interface ItemProps {
   item: CakeItem;
@@ -41,7 +42,12 @@ const Item: React.FC<ItemProps> = ({ item }) => {
         <div className="h-64 bg-gray-200 relative">
           {/* Replace with actual Image component */}
           <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-            Product Image
+            <Image
+              src={item.attributes.image.data[0].attributes.url}
+              alt={item.name}
+              width={500}
+              height={500}
+            />
           </div>
         </div>
       </Link>

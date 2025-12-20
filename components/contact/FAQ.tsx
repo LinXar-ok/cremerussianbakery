@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaQuestionCircle } from "react-icons/fa";
 
@@ -103,7 +104,8 @@ export default function FAQ() {
           Frequently Asked Questions
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Can't find the answer you're looking for? Contact our support team.
+          Can&apos;t find the answer you&apos;re looking for? Contact our
+          support team.
         </p>
       </div>
 
@@ -177,18 +179,18 @@ export default function FAQ() {
             questions you might have.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/contact"
               className="inline-block bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors"
             >
               Contact Support
-            </a>
-            <a
+            </Link>
+            <Link
               href="tel:5551234567"
               className="inline-block border-2 border-red-600 text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition-colors"
             >
               Call Now: (555) 123-4567
-            </a>
+            </Link>
           </div>
         </div>
       </div>

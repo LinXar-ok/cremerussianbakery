@@ -43,34 +43,34 @@ const Footer = () => {
               pastries made fresh daily.
             </p>
             <div className="flex space-x-4">
-              <a
+              <Link
                 href="#"
                 className="text-primary-dark hover:text-red-500 transition-colors duration-300"
                 aria-label="Facebook"
               >
                 <FaFacebook className="h-6 w-6" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-primary-dark hover:text-red-500 transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <FaInstagram className="h-6 w-6" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-primary-dark hover:text-red-500 transition-colors duration-300"
                 aria-label="Twitter"
               >
                 <FaTwitter className="h-6 w-6" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-primary-dark hover:text-red-500 transition-colors duration-300"
                 aria-label="WhatsApp"
               >
                 <FaWhatsapp className="h-6 w-6" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -80,12 +80,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-primary-dark hover:text-red-500 transition-colors duration-300"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -97,12 +97,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.name}>
-                  <a
+                  <Link
                     href={service.href}
                     className="text-primary-dark hover:text-red-500 transition-colors duration-300"
                   >
                     {service.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

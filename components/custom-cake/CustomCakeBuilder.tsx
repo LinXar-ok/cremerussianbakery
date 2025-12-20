@@ -264,9 +264,13 @@ export default function CustomCakeBuilder() {
   const dispatch = useDispatch<AppDispatch>();
   const [cake, setCake] = useState<CakeConfiguration>(initialCakeConfig);
   const [currentStep, setCurrentStep] = useState(1);
-  const [previewImage, setPreviewImage] = useState("/custom-cake-preview.jpg");
   const [inspirationImages, setInspirationImages] = useState<string[]>([]);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+
+  // Calculate preview image based on current cake state
+  const previewImage = `/cake-${cake.flavor.name
+    .toLowerCase()
+    .replace(/\s+/g, "-")}.jpg`;
 
   // Calculate total price
   const calculateTotal = () => {
@@ -293,16 +297,6 @@ export default function CustomCakeBuilder() {
   };
 
   const totalPrice = calculateTotal();
-
-  // Update preview when configuration changes
-  useEffect(() => {
-    // In a real app, this would generate a preview image
-    // For now, we'll just update a mock image
-    const newPreview = `/cake-${cake.flavor.name
-      .toLowerCase()
-      .replace(/\s+/g, "-")}.jpg`;
-    setPreviewImage(newPreview);
-  }, [cake.flavor.name, cake.designStyle]);
 
   const handleSizeChange = (size: (typeof sizes)[0]) => {
     setCake({ ...cake, size });
