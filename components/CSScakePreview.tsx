@@ -1,11 +1,87 @@
-const CSSCakePreview = ({ cake }) => {
+import React, { useMemo } from "react";
+
+export interface CakeConfiguration {
+  size: {
+    name: string;
+    servings: string;
+    price: number;
+  };
+  flavor: {
+    name: string;
+    description: string;
+    price: number;
+    color: string;
+  };
+  frosting: {
+    name: string;
+    type: string;
+    price: number;
+  };
+  filling: {
+    name: string;
+    description: string;
+    price: number;
+  };
+  occasion: {
+    name: string;
+    theme: string;
+    price: number;
+  };
+  decorations: {
+    id: string;
+    name: string;
+    price: number;
+    selected: boolean;
+  }[];
+  personalization: {
+    text: string;
+    font: string;
+    color: string;
+  };
+  extras: {
+    candles: boolean;
+    topper: boolean;
+    edibleImage: boolean;
+    freshFlowers: boolean;
+    sparklers: boolean;
+  };
+  designStyle: string;
+  dietaryRequirements: string[];
+  deliveryDate: string;
+  specialInstructions: string;
+}
+
+const CSSCakePreview = ({ cake }: { cake: CakeConfiguration }) => {
+  const hasSprinkles = cake.decorations.some(
+    (d) => d.id === "sprinkles" && d.selected
+  );
+
+  const [sprinklesPositions, setSprinklesPositions] = React.useState<
+    { key: number; left: string; top: string; rotate: string; color: string }[]
+  >([]);
+
+  React.useEffect(() => {
+    if (!hasSprinkles) {
+      setSprinklesPositions([]);
+      return;
+    }
+    const positions = Array.from({ length: 20 }).map((_, i) => ({
+      key: i,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      rotate: `${Math.random() * 360}deg`,
+      color: ["#FF6B6B", "#4ECDC4", "#FFEAA7", "#DDA0DD"][i % 4],
+    }));
+    setSprinklesPositions(positions);
+  }, [hasSprinkles]);
+
   return (
     <div className="relative h-64 flex items-center justify-center">
       {/* 3D Cake Container */}
       <div className="relative w-48 h-48 perspective-1000">
         {/* Cake tiers based on size */}
         {cake.size.name === "Large" && (
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-40 h-10 bg-gradient-to-r from-yellow-200 to-yellow-300 rounded-t-lg" />
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-40 h-10 bg-linear-to-r from-yellow-200 to-yellow-300 rounded-t-lg" />
         )}
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-32 h-32">
@@ -15,7 +91,7 @@ const CSSCakePreview = ({ cake }) => {
             style={{ backgroundColor: cake.flavor.color }}
           >
             {/* Frosting drip effect */}
-            <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-r from-pink-100 to-yellow-100 rounded-t-lg" />
+            <div className="absolute top-0 left-0 right-0 h-4 bg-linear-to-r from-pink-100 to-yellow-100 rounded-t-lg" />
 
             {/* Filling layer indicator */}
             {cake.filling.name !== "None" && (
@@ -27,20 +103,15 @@ const CSSCakePreview = ({ cake }) => {
               (d) => d.id === "sprinkles" && d.selected
             ) && (
               <div className="absolute inset-0">
-                {[...Array(20)].map((_, i) => (
+                {sprinklesPositions.map((p) => (
                   <div
-                    key={i}
+                    key={p.key}
                     className="absolute w-1 h-3 rounded-full"
                     style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      backgroundColor: [
-                        "#FF6B6B",
-                        "#4ECDC4",
-                        "#FFEAA7",
-                        "#DDA0DD",
-                      ][i % 4],
-                      transform: `rotate(${Math.random() * 360}deg)`,
+                      left: p.left,
+                      top: p.top,
+                      backgroundColor: p.color,
+                      transform: `rotate(${p.rotate})`,
                     }}
                   />
                 ))}

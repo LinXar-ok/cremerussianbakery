@@ -2,15 +2,12 @@
 
 import Link from "next/link";
 import { FaCheckCircle, FaShippingFast, FaPhone } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function OrderConfirmationPage() {
-  const [orderNumber, setOrderNumber] = useState<string>("");
-
-  useEffect(() => {
-    // Generate order number only on client side
-    setOrderNumber("MSR" + Math.floor(Math.random() * 1000000));
-  }, []);
+  const [orderNumber] = useState<string>(
+    () => "MSR" + Math.floor(Math.random() * 1000000)
+  );
 
   return (
     <div className="pt-24 min-h-screen">
