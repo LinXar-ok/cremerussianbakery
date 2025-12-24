@@ -144,9 +144,9 @@ export default function CheckoutForm() {
                   onChange={(e) => setShippingMethod(e.target.value)}
                   className="sr-only"
                 />
-                <div className="font-semibold">{method.label}</div>
+                <div className="font-semibold text-ptext">{method.label}</div>
                 <div className="text-gray-600 text-sm mt-1">{method.time}</div>
-                <div className="font-bold mt-2">
+                <div className="font-bold mt-2 text-ptext">
                   {method.price === 0 ? "FREE" : `$${method.price.toFixed(2)}`}
                 </div>
               </label>
