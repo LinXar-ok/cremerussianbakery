@@ -17,7 +17,6 @@ import {
   FaShare,
   FaDownload,
 } from "react-icons/fa";
-import CakePreviewSVG from "../CakePreview";
 import CSSCakePreview from "../CSScakePreview";
 
 // Types
