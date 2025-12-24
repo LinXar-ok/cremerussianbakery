@@ -123,7 +123,7 @@ export default function TeamSection() {
                     backgroundColor: "#f3f4f6",
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
               </div>
 
               {/* Team Member Info */}
@@ -184,7 +184,7 @@ export default function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mt-20 bg-gradient-to-r from-red-50 to-pink-50 rounded-2xl p-8 md:p-12 border border-red-100"
+          className="mt-20 bg-linear-to-r from-red-50 to-pink-50 rounded-2xl p-8 md:p-12 border border-red-100"
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0 md:mr-8">
@@ -198,7 +198,7 @@ export default function TeamSection() {
             </div>
             <Link
               href="/careers"
-              className="inline-block bg-primary hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 whitespace-nowrap"
+              className="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 whitespace-nowrap"
             >
               View Open Positions
             </Link>

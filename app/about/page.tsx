@@ -2,6 +2,7 @@ import TeamSection from "@/components/about/TeamSection";
 import ValuesSection from "@/components/about/ValuesSection";
 import { HeroSection } from "@/components/layout/HeroSection";
 import { MagicalBackground } from "@/components/layout/MagicalBackground";
+import { SectionHeading } from "@/components/layout/SectionHeading";
 
 export const metadata = {
   title: "About Us - Crème Russian Bakery",
@@ -41,13 +42,14 @@ export default function AboutPage() {
           {/* Hero Section */}
           <div className="bg-linear-to-r  py-20">
             <div className="max-w-7xl mx-auto px-4 text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6 font-serif">
-                Our Story
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                From a family kitchen to your table - baking with passion since
-                2015
-              </p>
+              <SectionHeading
+                title="Our Story"
+                subtitle="From a family kitchen to your table - baking with passion since
+                2015"
+                titleClassName="text-4xl md:text-6xl"
+                subtitleClassName="text-xl max-w-3xl"
+                underlineType="wavy"
+              />
             </div>
           </div>
 

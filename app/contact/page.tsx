@@ -43,7 +43,8 @@ export default function ContactPage() {
             <SectionHeading
               title="Contact Us"
               subtitle=" We're here to help with all your baking needs"
-              titleClassName="text-5xl"
+              titleClassName="text-4xl md:text-6xl"
+              subtitleClassName="text-xl max-w-3xl"
               className="py-25"
             />
 

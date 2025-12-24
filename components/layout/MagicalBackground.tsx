@@ -46,13 +46,13 @@ export function MagicalBackground({
         sprinkleColors: ["#FFA500", "#FFD700", "#FF6B35", "#FFB347", "#FFE5B4"],
       },
       celebration: {
-        gradient: "from-purple-50 via-pink-50 to-blue-50",
+        gradient: "from-white via-blue-50 to-blue-50",
         icons: ["🎉", "🎊", "🎁", "🎈", "🥳", "✨"],
         iconColor: "text-purple-200/30",
         sprinkleColors: ["#9B5DE5", "#F15BB5", "#00BBF9", "#00F5D4", "#FFD166"],
       },
       elegant: {
-        gradient: "from-slate-50 via-primary-300 to-zinc-50",
+        gradient: "from-slate-50 via-primary-100 to-zinc-50",
         icons: ["👑", "💎", "✨", "🌟", "🎀", "🕯️"],
         iconColor: "text-slate-200/30",
         sprinkleColors: ["#C0C0C0", "#D4AF37", "#A8A8A8", "#D3D3D3", "#F5F5F5"],

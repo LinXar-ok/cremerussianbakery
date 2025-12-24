@@ -355,7 +355,7 @@ export default function CheckoutForm() {
         {/* Credit Card Fields (conditionally shown) */}
         {paymentMethod === "credit-card" && (
           <div className="p-6 bg-gray-50 rounded-lg border">
-            <h4 className="font-bold mb-4 flex items-center">
+            <h4 className="font-bold mb-4 flex items-center text-ptext">
               <FaCreditCard className="mr-2" />
               Credit Card Information
             </h4>
@@ -364,7 +364,7 @@ export default function CheckoutForm() {
                 <label className="block text-gray-700 mb-2">Card Number</label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent text-ptext outline-none"
                   placeholder="1234 5678 9012 3456"
                 />
               </div>
@@ -372,7 +372,7 @@ export default function CheckoutForm() {
                 <label className="block text-gray-700 mb-2">Card Holder</label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent text-ptext outline-none"
                   placeholder="John Doe"
                 />
               </div>
@@ -380,7 +380,7 @@ export default function CheckoutForm() {
                 <label className="block text-gray-700 mb-2">Expiry Date</label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent text-ptext outline-none"
                   placeholder="MM/YY"
                 />
               </div>
@@ -388,7 +388,7 @@ export default function CheckoutForm() {
                 <label className="block text-gray-700 mb-2">CVV</label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-1000 focus:border-transparent text-ptext outline-none"
                   placeholder="123"
                 />
               </div>

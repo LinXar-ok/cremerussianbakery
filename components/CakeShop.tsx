@@ -102,7 +102,7 @@ const items: Product[] = [
 
 const CakeShop = () => {
   return (
-    <div className="bg-gray-200">
+    <div className="bg-primary-200">
       <div className="max-w-7xl mx-auto py-20">
         <SectionHeading title="Shop Our Pastries" underlineType="swirl" />
         <div className="mx-auto mt-14 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] justify-around gap-y-5 gap-x-[1.33%] max-h-screen overflow-auto">

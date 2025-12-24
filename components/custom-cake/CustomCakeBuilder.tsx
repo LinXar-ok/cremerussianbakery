@@ -17,6 +17,8 @@ import {
   FaShare,
   FaDownload,
 } from "react-icons/fa";
+import CakePreviewSVG from "../CakePreview";
+import CSSCakePreview from "../CSScakePreview";
 
 // Types
 interface CakeConfiguration {
@@ -928,11 +930,14 @@ export default function CustomCakeBuilder() {
                 Cake Preview
               </h3>
               <div className="relative h-64 rounded-lg overflow-hidden mb-4">
-                <img
+                {/* <img
                   src={previewImage}
                   alt="Cake Preview"
                   className="w-full h-full object-cover"
-                />
+                /> */}
+
+                {/* <CakePreviewSVG cake={cake} /> */}
+                <CSSCakePreview cake={cake} />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-primary">
                   Preview
                 </div>

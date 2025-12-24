@@ -74,7 +74,8 @@ export default function CustomCakesPage() {
               title="Design Your Dream Cake"
               subtitle="Customize every detail to create the perfect cake for your special
               occasion"
-              titleClassName="text-3xl lg:text-5xl"
+              titleClassName="text-4xl md:text-6xl"
+              subtitleClassName="text-xl max-w-3xl"
             />
 
             {/* Decorative cake icon under heading */}

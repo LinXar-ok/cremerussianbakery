@@ -63,7 +63,8 @@ export default function ProductsPage() {
             <SectionHeading
               title="Our Delicious Creations"
               subtitle="Freshly baked daily with the finest ingredients"
-              titleClassName="text-3xl lg:text-5xl"
+              titleClassName="text-4xl md:text-6xl"
+              subtitleClassName="text-xl max-w-3xl"
               className="py-20"
             />
 
